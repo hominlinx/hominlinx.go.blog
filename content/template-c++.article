@@ -1,0 +1,87 @@
+C++模板技术
+2013-10-01
+Tags: C++
+
+hominlinx
+
+* C++为了解决 重载问题 引入了模板
+** 模板定义：模板就是实现代码重用机制的一种工具，它可以实现类型参数化，即把类型定义为参数， 从而实现了真正的代码可重用性。模版可以分为两类，一个是函数模版，另外一个是类模版。
+
+1. 模板函数
+
+    template<class T>
+    T foo(T x, T y)
+    {
+        return(x<y)?x:y;
+         
+    }
+
+    void main( )
+
+    {
+
+         int n1=2,n2=10;
+
+         double d1=1.5,d2=5.6;
+
+         cout<< "较小整数:"<<min(n1,n2)<<endl;
+
+         cout<< "较小实数:"<<min(d1,d2)<<endl;
+
+         system("PAUSE");
+    }
+
+2. 类模板
+
+类模板不是类，是一类相同属性和功能但不同类型的类的制作模型。用户使用类模板可以为类声明一种模式，使得类中某些数据成员的类型、某些成员函数的类型参数、某些成员函数的返回值类型，能取任意类型。应用模板最大得利者是STL，它使容器可以容纳各式各样类型的元素。
+
+    template<class xxx>
+    class 类名
+    {
+         类成员声明；
+    }；
+    template <class xxx>
+    类型名 类名<xxx>::函数名（参数表）
+    {
+         函数体
+    }
+    如：
+    struct Student
+    {
+         int id;
+         float gpa;
+    };
+    template<class T >
+    class Store
+    {
+    private:
+         T item;
+         int havevalue;
+    public:
+         Store();
+         T Getstore();
+         void PutElem( T x);
+    };
+    template<class T >
+    Store<T >::Store ():havevalue (0)
+    {
+    }
+    template<class T >
+    T Store <T >::Getstore ()
+    {
+         if(havevalue == 0)
+         {
+                cout<< "No item present!";
+                exit(1);
+         }
+         return item;
+    }
+    template<class T >
+    void Store <T >::PutElem (T x )
+    {
+         havevalue ++;
+         item = x;
+    }
+
+
+
