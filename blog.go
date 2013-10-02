@@ -25,7 +25,7 @@ import (
 )
 
 const (
-	hostname     = "frozen-plains-3143.herokuapp.com"
+	hostname     = "hominlinx.go.herokuapp.com"
 	baseURL      = "http://" + hostname
 	homeArticles = 5  // number of articles to display on the home page
 	feedArticles = 10 // number of articles to include in Atom feed
@@ -327,7 +327,7 @@ func (s *Server) renderAtomFeed() error {
 		updated = s.docs[0].Time
 	}
 	feed := atom.Feed{
-		Title:   "Genius的博客",
+		Title:   "hominlinx的博客",
 		ID:      "tag:" + hostname + ",2013:" + hostname,
 		Updated: atom.Time(updated),
 		Link: []atom.Link{{

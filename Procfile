@@ -1,1 +1,1 @@
-web: bin/blog
+web: hominlinx.go.blog
