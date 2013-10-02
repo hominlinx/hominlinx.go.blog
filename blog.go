@@ -20,12 +20,12 @@ import (
 	"sort"
 	"time"
 
-	"go.blog/atom"
-	"go.blog/present"
+	"hominlinx.go.blog/atom"
+	"hominlinx.go.blog/present"
 )
 
 const (
-	hostname     = "hominlinx.go.herokuapp.com"
+	hostname     = "warm-springs-7905.herokuapp.com"
 	baseURL      = "http://" + hostname
 	homeArticles = 5  // number of articles to display on the home page
 	feedArticles = 10 // number of articles to include in Atom feed
